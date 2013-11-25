@@ -2,4 +2,11 @@
 *.swp
 .fuse*
 .nfs*
-
+*.aux
+*.fdb_latexmk
+*.log
+*.nav
+*.out
+algosbcourse.pdf
+*.snm
+*.toc
