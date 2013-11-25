@@ -1,0 +1,18 @@
+\frame{
+\frametitle{How to describe a protein conformation?}
+\begin{block}{Euclidean distance matrix}
+$A=(a_{ij})$;
+$a_{ij}=\|x_{i}-x_{j}\|_{2}^{2}$
+where $\|x_{i}-x_{j}\|_{2}$ is the euclidean distance between the two atoms $x_{i},x_{j}$
+\end{block}
+
+\begin{block}{Spectral decomposition of distance matrix}
+
+Decomposition based on eigenvalues of a square matrix $A$ is called spectral
+decomposition. It allows us to express the original square matrix $A$ of size
+$N$ in $N\times N$ terms of its eigenvalues $\lambda_k$ and corresponding
+eigenvectors $v_k$\footnote{J Struct Funct Genomics. 2009 March; 10(1): 67--81.}
+
+$$A=\sum_{k}\lambda_kv_kv_k^T$$
+\end{block}
+}

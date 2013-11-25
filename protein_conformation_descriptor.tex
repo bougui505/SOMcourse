@@ -1,0 +1,25 @@
+\frame{
+\frametitle{Protein conformation descriptor}
+
+\begin{alertblock}{The distance matrix}
+The square distance matrix is too big to be an efficient descriptor: for a
+protein with 341 amino-acids (VanA), a $C_\alpha$ distance matrix gives a
+descriptor length of 57\,970. With 25\,000 snapshot the size of the input
+matrix is: $25\,000 \times 57\,970$
+\end{alertblock}
+
+\begin{block}{The first 4 PCs...}
+
+\textbf{The first 4 PCs of the PCA are sufficient to describe the distance matrix}. We
+obtain a descriptor with 1\,364 elements and an input matrix with $25\,000
+\times 1\,364$. The compression rate is 43.
+
+\end{block}
+
+\begin{exampleblock}{Advantages}
+
+The clustering is not dependant of the alignment of the trajectory.
+
+\end{exampleblock}
+
+}
