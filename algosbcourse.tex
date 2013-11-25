@@ -1,0 +1,43 @@
+%        File: algosbcourse.tex
+%     Created: mer. nov. 20 10:00  2013 C
+% Last Change: mer. nov. 20 10:00  2013 C
+%
+\documentclass[]{beamer}
+\usepackage{epigraph}
+\setlength{\epigraphwidth}{\textwidth}
+\newcommand*\elide{\textup{[\,\dots]}}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{decorations,decorations.pathreplacing}
+\usetikzlibrary{arrows,positioning,shapes}
+\usetikzlibrary{calc}
+\input{planepartition}
+\AtBeginSection[]
+{
+ \begin{frame}<beamer>
+ \frametitle{Plan}
+ \tableofcontents[currentsection]
+ \end{frame}
+}
+\title{Clustering protein conformations using SOM}
+\author{Guillaume Bouvier}
+\date{November 28, 2013}
+\begin{document}
+\frame{\titlepage}
+\section{Introduction and theory}
+\include{definition}
+\include{som_definitions}
+\include{somarchitecture}
+\include{sominit}
+\include{somrun}
+\include{radius}
+\include{alpha}
+\include{somtrained}
+\include{umatrix}
+\include{umatrixmoon}
+\include{flooding}
+\include{clustering}
+\section{How to do in practice?}
+\include{getthecode}
+\end{document}
+

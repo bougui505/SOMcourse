@@ -1,0 +1,30 @@
+\frame{
+    \frametitle{SOM architecture}
+    \begin{columns}
+        \begin{column}{.8\textwidth}
+            \begin{center}
+                \begin{tikzpicture}[scale=0.6]
+                    \begin{scope}
+                        \planepartition{{2}}\vspace{0.25\textwidth}
+                    \end{scope}
+                    \begin{scope}[xshift=0.75\textwidth]
+                        \planepartition{
+                            {2,2,2,2,2},
+                            {2,2,2,2,2},
+                            {2,2,2,2,2},
+                            {2,2,2,2,2},
+                            {2,2,2,2,2},
+                            {2,2,2,2,2},
+                        }
+                    \end{scope}
+                \end{tikzpicture}
+            \end{center}
+        \end{column}
+        \begin{column}{.2\textwidth}
+            \includegraphics[width=\textwidth]{figures/donut.png}
+
+            A torus!
+        \end{column}
+    \end{columns}
+    Example of an input vector of dimension $n=2$ and a SOM of dimension $5 \times 5$. The SOM is periodic: a torus.
+}

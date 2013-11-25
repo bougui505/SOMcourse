@@ -1,0 +1,35 @@
+\frame{
+    \frametitle{The algorithm}
+    For each \textbf{iteration}
+    \begin{itemize}
+        \item we select randomly an input vector from the input space
+        \item we compute the Euclidean distance between the input vector and each neuron of the map
+        \item we select the neuron with the minimal distance, which is called the \textbf{Best Matching Unit} (BMU)
+        \item we modified the map with the following formula:
+    \end{itemize}
+    \begin{exampleblock}{}
+        \tikzstyle{every picture}+=[remember picture]
+        \everymath{\displaystyle}
+        \tikzstyle{na} = [baseline=-.5ex]
+        \begin{itemize}
+            \item Linear adjustment of the weights. \tikz[na] \node [coordinate] (adjustl) {};
+            \item Neighborhood function: regulates the influence\\of the BMU $(\beta_{1},\beta{2})$ \tikz[na] \node [coordinate] (thetal) {}; on the neighboring neurons.
+        \end{itemize}
+        \begin{equation*}
+            M(t+1) = M(t) + 
+            \tikz[baseline]{ \node[fill=blue!20,anchor=base] (alpha) {$\alpha(t)$}; }
+            \cdot
+            \tikz[baseline]{ \node[fill=red!20,anchor=base] (theta) {$\Theta(t,\beta_{1},\beta{2})$}; }
+            \cdot
+            \tikz[baseline]{ \node[fill=green!20,anchor=base] (adjust) {$(V-\Omega_{ij}(t))_{1\leq i\leq X,1\leq j\leq Y}$}; }
+        \end{equation*}
+        \begin{itemize}
+            \item Learning rate \tikz[na] \node [coordinate] (alphal) {};: weights the effect of the input vector during the training process.
+        \end{itemize}
+        \begin{tikzpicture}[overlay]
+            \path[->] (adjustl) edge [out=45, in=40] (adjust);
+            \path[->] (thetal) edge [out=-90,in=90] (theta);
+            \path[->] (alphal) edge [out=90, in=-90] (alpha);
+        \end{tikzpicture}
+    \end{exampleblock}
+}
