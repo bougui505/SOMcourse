@@ -10,4 +10,9 @@
 algosbcourse.pdf
 *.snm
 *.toc
-VanAexample
+VanAexample/1E4E-prot-CA.pdb
+VanAexample/VanA-VanAss.dcd
+VanAexample/bmus.npy
+VanAexample/clusters
+VanAexample/projections.npy
+VanAexample/smap.npy
