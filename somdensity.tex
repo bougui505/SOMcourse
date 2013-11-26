@@ -1,0 +1,10 @@
+\begin{frame}[fragile]
+    \frametitle{Computing the density}
+    The density is the number of input data per neuron. It can be easily calculated from the bmus:
+    \begin{lstlisting}
+X,Y,Z = smap.shape
+density = zeros((X,Y), dtype=int)
+for i,j in bmus:
+    density[i,j]+=1
+    \end{lstlisting}
+\end{frame}

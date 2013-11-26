@@ -1,0 +1,15 @@
+\begin{frame}[fragile]
+    \frametitle{Computing the clusters}
+    All is in SOMclust.py
+    \begin{lstlisting}
+clust = SOMclust.clusters(umat, bmus, smap) # will perform the flooding
+clust.getclusters() # will perform the flooding based clustering
+clust.plotclusters() # will plot the clusters
+    \end{lstlisting}
+    We can use directly the traj object to extract structures corresponding to clusters:
+    \begin{lstlisting}
+for e in unique(clust.labels):
+    save('clust_%d'%e, traj.array[clust.labels == e])
+    \end{lstlisting}
+    and use the script \texttt{applications/npytodcd.py} to directly convert the npy file to a standard dcd file: \lstinline{python npytodcd.py file.npy}.
+\end{frame}

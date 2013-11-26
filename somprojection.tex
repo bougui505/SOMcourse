@@ -1,0 +1,13 @@
+\begin{frame}[fragile]
+    \frametitle{Projecting data onto the SOM}
+    If you have data (RMSDs, energies) you want to project onto the map, you can use the BMUs to obtain the coordinate of each data on the SOM. This function below gives the mean value for each neuron.
+    \begin{lstlisting}
+def project(data):
+    pmap = zeros((X,Y))
+    for c,e in enumerate(bmus):
+        i,j = e
+        pmap[i,j]+=data[c]
+    pmap = pmap / density
+    return pmap
+    \end{lstlisting}
+\end{frame}

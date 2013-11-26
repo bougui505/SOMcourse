@@ -1,0 +1,17 @@
+\begin{frame}[fragile]
+    \frametitle{Reading the trajectory}
+    Home made implementation of dcd reader in python (named IO.py).
+    \begin{lstlisting}
+import IO
+traj = IO.Trajectory('filename.dcd', struct='filename.pdb')
+print traj.array.shape
+(9249, 168)
+#For a trajectory with 50001 frames and 168/3=56 atoms
+print traj.struct.atoms
+array([ (0, 1, 'CA', 'MET', 'X', 1, [26.659000396728516, 32.76900100708008, 36.242000579833984], 16.65999984741211, ''),
+       (1, 2, 'CA', 'THR', 'X', 2, [28.715999603271484, 29.847999572753906, 34.95100021362305], 13.109999656677246, ''),
+       (2, 3, 'CA', 'TYR', 'X', 3, [26.924999237060547, 27.43899917602539, 32.58100128173828], 8.869999885559082, ''),
+...
+      dtype=[('index', '<i4'), ('count', '<i4'), ('atomname', '|S4'), ('resname', '|S3'), ('chain', '|S1'), ('resid', '<i2'), ('coord', '<f4', (3,)), ('beta', '<f4'), ('segid', '|S4')])
+    \end{lstlisting}
+\end{frame}

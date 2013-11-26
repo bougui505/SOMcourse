@@ -1,0 +1,24 @@
+\begin{frame}[fragile]
+    \frametitle{Analyzing the SOM}
+    The easiest is to use ipython notebook: \lstinline{ipython notebook --pylab=inline}
+    and to do some import:
+    \begin{lstlisting}
+import SOM2
+import SOMTools # Tools to analyze SOMs
+import SOMclust # Tool to cluster SOMs
+import scipy
+import IO # Tool to load the trajectory
+pylab.rcParams['figure.figsize'] = 10, 10  # that's default image size for this interactive session
+smap = load('smap.npy') # load the map already computed
+inputmat = load('projections.npy') # load the inputmatrix
+som = SOM2.SOM(inputmat) # into the som
+som.smap = smap # and the smap too
+traj = IO.Trajectory('newtraj78_210521_ca.dcd', struct='2pgb_hydro_ca.pdb') # and the trajectory
+bmus = som.get_allbmus() # compute the Best Matching Units
+print bmus.shape
+(9249, 2) # Give the position in the SOM for each frame of the trajectory
+umat = SOMTools.getUmatrix(smap) # compute the U-matrix
+imatshow(umat) # To display the U-matrix
+colorbar() # with a colorbar
+    \end{lstlisting}
+\end{frame}

@@ -6,6 +6,7 @@
 \usepackage{epigraph}
 \setlength{\epigraphwidth}{\textwidth}
 \newcommand*\elide{\textup{[\,\dots]}}
+\usepackage{listings}
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usetikzlibrary{decorations,decorations.pathreplacing}
@@ -22,7 +23,14 @@
 \title{Clustering protein conformations using SOM}
 \author{Guillaume Bouvier}
 \date{November 28, 2013}
+\includeonly{readtrajectory, computedescriptors, runsom, somobject, somanalysis, somdensity, somclusters, somprojection}
 \begin{document}
+\lstset{language=Python, breaklines=true, basicstyle=\ttfamily\scriptsize,
+    keywordstyle=\color{blue}\ttfamily,
+    stringstyle=\color{red}\ttfamily,
+    commentstyle=\color{green}\ttfamily,
+    backgroundcolor=\color{orange!12}
+              }
 \frame{\titlepage}
 \section{Introduction and theory}
 \include{definition}
@@ -47,5 +55,13 @@
 \include{VanASOM}
 \section{How to do in practice?}
 \include{getthecode}
+\include{readtrajectory}
+\include{computedescriptors}
+\include{runsom}
+\include{somobject}
+\include{somanalysis}
+\include{somdensity}
+\include{somclusters}
+\include{somprojection}
 \end{document}
 

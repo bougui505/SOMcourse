@@ -1,0 +1,25 @@
+\begin{frame}[fragile]
+    \frametitle{Computing the descriptors}
+        \footnotesize
+        A script called \texttt{makeVectorsFromdcd\_PCA.py} in \texttt{application} does the job.
+    \begin{lstlisting}
+python makeVectorsFromdcd_PCA.py makeVectorsFromdcd_PCA.conf
+    \end{lstlisting}
+with \texttt{makeVectorsFromdcd\_PCA.conf}:
+    \begin{lstlisting}
+[makeVectors]
+nframes: 9249 # Number of frames in the dcd file
+structFile: 2pgb_hydro_ca.pdb
+trajFile: newtraj78_210521_ca.dcd
+projection: True
+nProcess: 4 # Number of parallel process
+    \end{lstlisting}
+    The script creates 5 files:
+    \begin{itemize}
+        \item \texttt{eigenValues.npy}: contains the eigenvalues of the distance matrix.
+        \item \texttt{eigenVectorsList.npy}: contains the eigenvectors.
+        \item \texttt{meansList.npy}: contains the means over the lines of the distance matrix.
+        \item \texttt{projections.npy}: contains the projections of the distance matrix on the first four eigenvectors (this is the file which will be used for the SOM training process).
+        \item \texttt{reconstruction.npy}: contains the concatenation of the eigenvectors, means and projections, which is useful when one want to reconstruct structure from the descriptor.
+    \end{itemize}
+\end{frame}

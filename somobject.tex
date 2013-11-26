@@ -1,0 +1,10 @@
+\begin{frame}[fragile]
+    \frametitle{SOM objects}
+    The map is stored in: \lstinline{som.smap}
+    \begin{lstlisting}
+print som.smap.shape
+(50, 50, 224)
+# 224 = 4*56 (56 is the number of atoms)
+    \end{lstlisting}
+    Don't forget to store the map in a numpy file: \lstinline{save('smap', som.smap)}, which will create the file \texttt{smap.npy} in the current working directory.
+\end{frame}

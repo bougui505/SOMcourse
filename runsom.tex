@@ -1,0 +1,28 @@
+\begin{frame}[fragile]
+    \frametitle{Run the SOM}
+    \only<1>
+    \footnotesize
+    The easiest is to use ipython.
+    \begin{lstlisting}
+ipython
+    \end{lstlisting}
+    and
+    \begin{lstlisting}
+%pylab # To switch to pylab mode
+Welcome to pylab, a matplotlib-based Python environment [backend: TkAgg].
+For more information, type 'help(pylab)'.
+import SOM2
+inputmat = load('projections.npy') # Loading the input matrix
+som = SOM2.SOM(inputmat) # Create the som object
+som.learn(verbose=True) # Launch the learning in verbose mode with default parameters
+...
+0 8200 9249 88.66% 3.00045867515 0.250035282704 (5, 39)
+0 8300 9249 89.74% 3.00041167015 0.250031666935 (7, 9)
+...
+# Displays the phase number (from 0), the iteration number, the total number of iteration, the progress, the radius, the learning rate and the BMU
+    \end{lstlisting}
+However you can change the default, for example the learning rate:
+\begin{lstlisting}[basicstyle=\tiny]
+som.learn(learning_rate=[lambda t, end_t, vector, bmu: som._generic_learning_rate(t, end_t, 1, 0.5, 'exp'), lambda t, end_t, vector, bmu: som._generic_learning_rate(t, end_t, 0.5, 0., 'exp')], verbose = True)
+    \end{lstlisting}
+\end{frame}
