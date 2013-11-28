@@ -1,0 +1,33 @@
+\frame{
+\frametitle{SOM clustering of pilus conformations}
+\begin{columns}
+\begin{column}{.5\textwidth}
+\includegraphics[width=.9\textwidth]{figures/umatrix.png}\\
+\includegraphics[width=.92\textwidth]{figures/twistanglemap.png}\\
+Projection of twist angle values
+\end{column}
+\begin{column}{.5\textwidth}
+\only<1>{
+\begin{block}{Path ($A \rightarrow C$) computation}
+\small
+MHMC algorithm:
+$$
+P(x_{t+1}=x|x_t)=\min\left\{\frac{\pi(x)Q(x)}{\pi(x_t)Q(x_t)},1\right\}
+$$
+with:
+$$
+Q(x) = \exp(-d_{x}/k)
+$$
+and:
+$$
+\pi(x) = \exp(-U(x)/k')
+$$
+An average on 100 possible paths was computed\\
+\end{block}}
+\only<2>{
+\begin{block}{Path ($A \rightarrow C$) computation}
+\includegraphics[width=\textwidth]{figures/twistanglegraph.png}
+\end{block}}
+\end{column}
+\end{columns}
+}

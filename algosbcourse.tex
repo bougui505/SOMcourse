@@ -8,6 +8,7 @@
 \newcommand*\elide{\textup{[\,\dots]}}
 \usepackage{listings}
 \usepackage{tikz}
+\usepackage{array}
 \usepackage{pgfplots}
 \usetikzlibrary{decorations,decorations.pathreplacing}
 \usetikzlibrary{arrows,positioning,shapes}
@@ -23,6 +24,8 @@
 \title{Clustering protein conformations using SOM}
 \author{Guillaume Bouvier}
 \date{November 28, 2013}
+
+%\includeonly{piluspathmovie}
 
 \begin{document}
 \lstset{language=Python, breaklines=true, basicstyle=\ttfamily\scriptsize,
@@ -54,6 +57,11 @@
 \include{vanAMD}
 \include{VanASOM}
 \include{VanASOMegb}
+\include{pilusintro}
+\include{pilusvariability}
+\include{piluspath}
+\include{validation}
+\include{piluspathmovie}
 \section{How to do in practice?}
 \include{getthecode}
 \include{readtrajectory}
