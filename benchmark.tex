@@ -1,0 +1,25 @@
+\frame{
+\frametitle{The chainlink benchmark}
+\begin{columns}
+\begin{column}{.5\textwidth}
+\begin{block}{The input space}
+\only<1>{
+\includegraphics[width=\textwidth]{figures/chainlink_data.png}}
+\only<2->{
+\includegraphics[width=\textwidth]{figures/chainlink_SOM2D.png}}
+\end{block}
+\end{column}
+\begin{column}{.5\textwidth}
+\only<1>{
+\begin{block}{$k$-means clustering with $k=4$}
+\includegraphics[width=.9\textwidth]{figures/chainlink_kmeans.png}
+\end{block}}
+\only<2->{
+\begin{block}{SOM}
+\includegraphics[width=.9\textwidth]{figures/torusUmat.png}
+\end{block}
+}
+\end{column}
+\end{columns}
+\only<3>{SOM preserves the topology of the input space}
+}
