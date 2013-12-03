@@ -42,6 +42,5 @@ clusters
 eigenValues.npy
 eigenVectorsList.npy
 meansList.npy
-projections.npy
 reconstruction.npy
 *.vrb
